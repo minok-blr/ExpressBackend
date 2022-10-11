@@ -1,0 +1,25 @@
+<p>Welcome to Ask a question homepage!</p>
+<h1>List of asked questions:</h1>
+
+{{#each questions}}
+    <div class="col-sm-5 col-md-6 col-12 pb-4">
+        <div class="comment mt-4 text-justify float-left border border-dark">
+            <h4>{{title}}</h4>
+            <p>{{content}}</p>
+            <span>- {{createdAt}}</span>
+            <br>
+            <span>Author: {{author.username}}</span>
+            <p>Tags:</p>
+
+
+            {{#each tags}}
+                <span><a href="//localhost:3000/questions/search/{{this}}"/>{{this}}</span>
+            {{/each}}
+
+            <br>
+            <a href="/questions/{{_id}}">See more</a>
+            <p>Views: {{viewcount}}</p>
+        </div>
+    </div>
+{{/each}}
+

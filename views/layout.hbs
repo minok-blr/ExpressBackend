@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap4/css/bootstrap.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href='/questions'>Domov</a></li>
+        <li><a href='/questions/hottopics'>Hot issues</a></li>
+        {{#if session.userId}}
+        <li><a href='/users/profile'>Profil</a></li>
+        <li><a href='/photos/publish'>Objavi sliko</a></li>
+        <li><a href='/questions/publish'>Ask a question</a></li>
+        <li><a href='/questions/mylist'>My questions</a></li>
+        <li><a href='/users/logout'>Odjava</a></li>
+        {{else}}
+        <li><a href='/users/login'>Prijava</a></li>
+        <li><a href='/users/register'>Registracija</a></li>
+        {{/if}}
+      </ul>
+        <h1>Welcome, {{ session.username }}</h1>
+    </nav>
+    {{{body}}}
+  </body>
+</html>
+
+<!--
+<div class="col-sm-6 col-md-6 col-12 pb-4">
+    <div class="comment mt-4 text-justify float-left border border-dark">
+        <h4>{{question.title}}</h4>
+        <p>{{question.content}}</p>
+        <span>- {{question.createdAt}}</span>
+        <br>
+        <span>Author: {{question.author.username}}</span>
+        <hr>
+        <h3>Answers:</h3>
+        <hr>
+        <div class="">
+
+            {{#each answers}}
+                <p>Answer:{{content}}</p>
+                <p>Posted by: {{author.username}}</p>
+                {{#if canDelete}}
+                    <form method="post" action="/questions/answer/{{_id}}?_method=DELETE">
+                        <h7>Hello, {{@root.session.username}}, you can delete this answer</h7>
+                        <button value="submit">Delete answer</button>
+                    </form>
+                {{/if}}
+                <hr>
+            {{/each}}
+        </div>
+        <br>
+
+    </div>
+
+    {{#if session.userId}}
+        <div class="col-sm-5 col-md-6 col-12 pb-4">
+            <div class="comment mt-4 text-justify float-right border border-dark">
+                <h1>Add an answer</h1>
+                <form action="/questions/answer/{{question._id}}" method="POST">
+                    <input type="text" name="answer" id="textdata" placeholder="Write answer here" /><br/>
+                    <input type="submit" value="Post answer">
+                </form>
+            </div>
+        </div>
+    {{/if}}
+
+-->

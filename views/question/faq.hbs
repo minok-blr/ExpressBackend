@@ -1,0 +1,13 @@
+{{#each questions}}
+    <div class="col-sm-5 col-md-6 col-12 pb-4">
+        <div class="comment mt-4 text-justify float-left border border-dark">
+            <h4>{{title}}</h4>
+            <p>{{content}}</p>
+            <span>- {{createdAt}}</span>
+            <br>
+            <span>Author: {{author.username}}</span>
+            <a href="//localhost:3000/questions/{{_id}}">Click to see answers</a>
+            <p>Views in the past 5 minutes: {{5minviewcount}}</p>
+        </div>
+    </div>
+{{/each}}

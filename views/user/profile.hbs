@@ -1,0 +1,16 @@
+<h1>User profile</h1>
+<h4>Username: {{user.username}}</h4>
+<h4>Mail: {{user.email}}</h4>
+<h4>Stats:</h4>
+<h5>Asked {{stats.[0]}} questions</h5>
+<h5>Answered {{stats.[1]}} questions</h5>
+<h5>Selected {{stats.[2]}} answers</h5>
+<div class="col-sm-2 text-center">
+    <br>
+    <img src="{{user.picPath}}" class="img-circle" height="65" width="65" alt="Avatar">
+</div>
+
+<br><br>
+<h4><a href="/users/publish">Add new profile picture</a></h4>
+
+<br><br><br><a type="button" href="logout">Odjava </a>
